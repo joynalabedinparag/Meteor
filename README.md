@@ -4,10 +4,6 @@
 ## This Application is built on Meteor & Blaze.
 This project demonstrate how to integrate third party API to a meteor project.
 
-Meteor is an ultra-simple environment for building modern web
-applications.
-
-
 Try a getting started tutorial:
  * [Blaze](https://www.meteor.com/tutorials/blaze/creating-an-app)
 

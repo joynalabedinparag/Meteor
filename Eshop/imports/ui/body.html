@@ -1,15 +1,6 @@
 
 <body>
     <div class="container">
-            {{#momentum plugin='right-to-left'}}
-                {{#with orders}}
-                    {{#if orders}}
-                        <p>{{orders.count}} Results..</p>
-                    {{else}}
-                        {{> AppLoading}}
-                    {{/if}}
-                {{/with}}    
-            {{/momentum}}
         <div class="row">
 
                 {{#with orders}}
@@ -48,22 +39,5 @@
     </div>
   
   </body>
-  
-  
-    <template name="appBody">
-        {{#momentum plugin="fade"}}
-            {{#if Template.subscriptionsReady}}
-        <p> appbody </p>
-
-                {{> Template.dynamic template=main}}
-            {{else}}
-                {{> AppLoading}}
-            {{/if}}
-        {{/momentum}}
-    </template>
-
-    <template name="AppLoading">
-            <p> Loading... </p>
-    </template>
   
   
