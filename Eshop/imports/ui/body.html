@@ -1,0 +1,69 @@
+
+<body>
+    <div class="container">
+            {{#momentum plugin='right-to-left'}}
+                {{#with orders}}
+                    {{#if orders}}
+                        <p>{{orders.count}} Results..</p>
+                    {{else}}
+                        {{> AppLoading}}
+                    {{/if}}
+                {{/with}}    
+            {{/momentum}}
+        <div class="row">
+
+                {{#with orders}}
+                  
+                    {{#each listdata}}
+                     
+                    <div class="col-sm">
+                        <div class="card mt-5" style="width: 20rem;">
+                            <img class="card-img-top" src={{defaultHeaderpath}} alt="Card image cap">
+                            <div class="card-body p-1">
+                                <div class="col">
+                                    <div class="media">
+                                        <img class="align-self-center mr-3 rounded"  src={{ResturantLogo}} alt="..." style="width: 4rem">
+                                        <div class="media-body">
+                                            <div class="">
+                                                <h5 class="mt-0"> {{ResturantName}} </h5>
+                                                <p class="card-text">{{cusines_name_alllist}}</p>
+                                            </div>
+                                            <div class="">
+                                                <p class="card-text">min. order &euro; {{minimum_order_value}}</p>
+                                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{milesDistance}} mi</p>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                {{/with}}
+
+
+        </div>
+    
+    </div>
+  
+  </body>
+  
+  
+    <template name="appBody">
+        {{#momentum plugin="fade"}}
+            {{#if Template.subscriptionsReady}}
+        <p> appbody </p>
+
+                {{> Template.dynamic template=main}}
+            {{else}}
+                {{> AppLoading}}
+            {{/if}}
+        {{/momentum}}
+    </template>
+
+    <template name="AppLoading">
+            <p> Loading... </p>
+    </template>
+  
+  
